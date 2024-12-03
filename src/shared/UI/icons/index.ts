@@ -1,0 +1,6 @@
+export * from './IconCart/IconCart'
+export * from './IconLogo/IconLogo'
+export * from './IconFacebook/IconFacebook'
+export * from './IconTwitter/IconTwitter'
+export * from './IconInstagram/IconInstagram'
+export * from './IconBurger/IconBurger'
