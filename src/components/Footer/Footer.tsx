@@ -19,7 +19,10 @@ export const Footer = () => {
             <ul className="flex gap-[34px] xs:flex-col xs:items-center xs:gap-4">
               {links.map((link) => (
                 <li key={link}>
-                  <AppLink children={link} />
+                  <AppLink
+                    path={link}
+                    children={link}
+                  />
                 </li>
               ))}
             </ul>
@@ -33,7 +36,7 @@ export const Footer = () => {
             <ul className="flex items-center gap-4 lg:hidden">
               {socials.map((icons) => (
                 <li key={icons.href}>
-                  <AppLink>{icons.icon}</AppLink>
+                  <AppLink path={icons.href}>{icons.icon}</AppLink>
                 </li>
               ))}
             </ul>
@@ -43,7 +46,7 @@ export const Footer = () => {
             <ul className="lg:flex items-center gap-4 hidden">
               {socials.map((icons) => (
                 <li key={icons.href}>
-                  <AppLink>{icons.icon}</AppLink>
+                  <AppLink path={icons.href}>{icons.icon}</AppLink>
                 </li>
               ))}
             </ul>
