@@ -21,24 +21,34 @@ export const Header = () => {
           <ul className="flex gap-[34px] md:hidden">
             {links.map((link) => (
               <li key={link}>
-                <AppLink children={link} />
+                <AppLink
+                  children={link}
+                  path={`${link !== 'home' ? link : '/'}`}
+                />
               </li>
             ))}
           </ul>
           {burgerMenu && (
             <ul className="flex flex-col items-end bg-black-200 gap-[34px] absolute left-0 top-[89px] py-6 px-[40px] w-full z-10">
               {links.map((link) => (
-                <li key={link}>
-                  <AppLink children={link} />
+                <li
+                  key={link}
+                  onClick={burgerMenuHandler}>
+                  {
+                    <AppLink
+                      children={link}
+                      path={`${link !== 'home' ? link : '/'}`}
+                    />
+                  }
                 </li>
               ))}
             </ul>
           )}
         </div>
         <div className="pl-6">
-          <a href="#">
+          <AppLink path="cart">
             <IconCart />
-          </a>
+          </AppLink>
         </div>
       </div>
     </header>
