@@ -1,13 +1,16 @@
+import { NavLink } from 'react-router-dom'
+
 interface AppLinkProps {
   children: string | JSX.Element
+  path: string
 }
 
-export const AppLink = ({ children }: AppLinkProps) => {
+export const AppLink = ({ children, path }: AppLinkProps) => {
   return (
-    <a
+    <NavLink
       className="block text-white text-[0.8125rem] bold leading-[25px] tracking-[2px] cursor-pointer uppercase hover:text-orange-200 transition duration-400 xs:text-[1.4rem]"
-      href="#">
+      to={path}>
       {children}
-    </a>
+    </NavLink>
   )
 }
